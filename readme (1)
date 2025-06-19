@@ -1,0 +1,77 @@
+myshell - A Simple UNIX Shell
+=============================
+
+myshell:
+---------------
+myshell is a simple command-line shell program written in C. It mimics basic functionality of popular UNIX shells. You can use it to navigate directories, run programs, redirect input/output, execute commands in the background, and read command sequences from a batch file.
+
+How to Run:
+--------------
+To start myshell in interactive mode:
+
+    ./myshell
+
+To run a batch file (a file with a list of commands):
+
+    ./myshell batchfile.txt
+
+Built-in Commands:
+---------------------
+- cd [directory]
+    Change the current working directory. If no directory is given, prints the current one.
+
+- clr
+    Clears the screen.
+
+- dir [directory]
+    Lists contents of the given directory. Defaults to current directory if none is specified.
+
+- environ
+    Lists all environment variables.
+
+- echo [text]
+    Prints the given text.
+
+- help
+    Displays this help manual.
+
+- pause
+    Pauses execution until the user presses Enter.
+
+- quit
+    Exits the shell.
+
+Features:
+------------
+Input/Output Redirection:
+    - < to read input from a file:        command < input.txt
+    - > to write output (overwrite):      command > output.txt
+    - >> to append output to a file:      command >> output.txt
+
+Background Execution:
+    - Add & to the end of a command to run it in the background.
+
+Batch File Mode:
+    - Create a file with commands (e.g., commands.txt)
+    - Run it like this:
+        ./myshell commands.txt
+
+Environment Variables:
+    - shell is set to the full path of myshell
+    - parent is passed to all external programs as an environment variable
+
+Notes:
+---------
+- All redirection symbols (<, >, >>, &) must be space-separated.
+- The current working directory is shown in the shell prompt.
+- Error messages are shown if commands fail or files are not found.
+
+My shell Structure:
+---------------------
+- myshell.c        → Main shell logic and input loop
+- utility.c        → Functions for built-in and external command handling
+- myshell.h        → Shared constants and function declarations
+- makefile         → Compiles myshell using gcc
+- readme           → This help manual
+End of Manual
+=============================
