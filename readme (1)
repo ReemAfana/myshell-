@@ -62,7 +62,7 @@ Environment Variables:
 
 Notes:
 ---------
-- All redirection symbols (<, >, >>, &) must be space-separated.
+- Make sure redirection tokens (<, >, >>) and & are separated by spaces (e.g., echo Hello > out.txt).
 - The current working directory is shown in the shell prompt.
 - Error messages are shown if commands fail or files are not found.
 
